@@ -1,0 +1,14 @@
+name: Start scheduled job
+
+on:
+  # Triggers the workflow every monday at 14:30 UTC
+  schedule:
+    - cron: 30 14 * * mon
+
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    name: Start the server
+    steps:
+      - name: Run a one-line script
+        run: echo "Starting server (not doing anything yet)"

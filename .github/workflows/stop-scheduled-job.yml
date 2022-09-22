@@ -1,0 +1,14 @@
+name: Stop scheduled job
+
+on:
+  # Triggers the workflow every monday at 16:00 UTC
+  schedule:
+    - cron: "0 16 30 * mon"
+
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    name: Stop the server
+    steps:
+      - name: Run a one-line script
+        run: echo "Stopping server (not doing anything yet)"
