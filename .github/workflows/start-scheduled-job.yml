@@ -12,5 +12,4 @@ jobs:
     steps:
       - name: Download RunPod CLI
         run: wget https://github.com/Run-Pod/runpodctl/releases/download/v1.5.0/runpodctl-linux-amd && chmod +x runpodctl-linux-amd
-      - name: Start Pod
 	run: ./runpodctl-linux-amd config --apiKey=${{secrets.RUN_POD_API_KEY}} && ./runpodctl-linux-amd start pod llr8joxw2qhxbi
