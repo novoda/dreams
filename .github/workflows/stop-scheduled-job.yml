@@ -3,7 +3,7 @@ name: Stop scheduled job
 on:
   # Triggers the workflow every monday at 16:30 UTC
   schedule:
-    - cron: "15 03 * * thu"
+    - cron: "20 03 * * 5"
 
 jobs:
   cron:
