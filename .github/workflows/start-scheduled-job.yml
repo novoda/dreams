@@ -3,7 +3,7 @@ name: Start scheduled job
 on:
   # Triggers the workflow every monday at 16:30 UTC
   schedule:
-    - cron: "16 03 * * 4"
+    - cron: "22 03 * * *"
 
 jobs:
   cron:
