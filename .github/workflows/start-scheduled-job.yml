@@ -14,4 +14,4 @@ jobs:
       - name: Download run pod cli
         run: wget https://github.com/Run-Pod/runpodctl/releases/download/v1.5.0/runpodctl-linux-amd && chmod +x runpodctl-linux-amd
       - name: Start pod
-        run: ./runpodctl-linux-amd config --apiKey=${{secrets.RUN_POD_API_KEY}} && ./runpodctl-linux-amd start pod ff1afe6f3edb
+        run: ./runpodctl-linux-amd config --apiKey=${{secrets.RUN_POD_API_KEY}} && ./runpodctl-linux-amd start pod 05jtpv6gi4xk3c
