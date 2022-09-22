@@ -2,8 +2,9 @@ name: Stop scheduled job
 
 on:
   # Triggers the workflow every monday at 16:00 UTC
-  schedule:
-    - cron: "11 * * * *"
+  workflow_dispatch:
+#  schedule:
+#    - cron: "11 * * * *"
 
 jobs:
   cron:

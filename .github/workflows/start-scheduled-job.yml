@@ -2,8 +2,9 @@ name: Start scheduled job
 
 on:
   # Triggers the workflow every monday at 14:30 UTC
-  schedule:
-    - cron: 10 * * * *
+  workflow_dispatch:
+#  schedule:
+#    - cron: 10 * * * *
 
 jobs:
   cron:
