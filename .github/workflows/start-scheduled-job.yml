@@ -11,5 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Start the server
     steps:
-      - name: Run a one-line script
-        run: echo "Starting server (not doing anything yet)"
+      - name: Download run pod cli
+        run: wget https://github.com/Run-Pod/runpodctl/releases/download/v1.5.0/runpodctl-linux-amd && chmod +x runpodctl-linux-amd
+      - name: Start pod
+        run: ./runpodctl-linux-amd config --apiKey=${{secrets.RUN_POD_API_KEY}} && ./runpodctl-linux-amd start pod llr8joxw2qhxbi
