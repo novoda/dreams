@@ -1,3 +1,5 @@
+#!/bin/bash
+cd "${0%/*}"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -7,3 +9,4 @@ nvm use 12
 npm install -g localtunnel
 pip install -r requirements.txt
 python dreams.py & lt --port 8000 --subdomain novoda-dreams 
+
