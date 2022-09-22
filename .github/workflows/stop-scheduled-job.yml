@@ -1,14 +1,17 @@
 name: Stop scheduled job
 
 on:
-  # Triggers the workflow every monday at 16:00 UTC
+  # Triggers the workflow every monday at 16:30 UTC
   schedule:
-    - cron: "0 16 30 * mon"
+    - cron: "10 03 * * thu"
 
 jobs:
   cron:
     runs-on: ubuntu-latest
     name: Stop the server
     steps:
-      - name: Run a one-line script
-        run: echo "Stopping server (not doing anything yet)"
+      - name: Download RunPod CLI
+        run: wget https://github.com/Run-Pod/runpodctl/releases/download/v1.5.0/runpodctl-linux-amd && chmod +x runpodctl-linux-amd
+      - name: Start Pod
+        run: ./runpodctl-linux-amd config --apiKey=${{secrets.RUN_POD_API_KEY}} && ./runpodctl-linux-amd stop pod llr8joxw2qhxbi
+
