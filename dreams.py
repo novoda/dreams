@@ -24,6 +24,8 @@ def dream(prompt: str):
   image.save(byteIO, format='PNG')
   return byteIO.getvalue()
 
+dream("warm up") ## warms up, proven to serve faster after the first call
+
 app = FastAPI()
 
 app.add_middleware(
