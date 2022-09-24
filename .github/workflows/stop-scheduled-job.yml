@@ -12,6 +12,6 @@ jobs:
     name: Start the server
     steps:
       - name: Download run pod cli
-        run: wget https://raw.githubusercontent.com/novoda/dreams/main/manage-pods.sh
+        run: wget https://raw.githubusercontent.com/novoda/dreams/main/manage-pods.sh && chmod +x ./manage-pods.sh
       - name: Stop pod
         run: ./manage-pods.sh --stop ${{secrets.RUN_POD_API_KEY}} ${{secrets.HUGGING_FACE_TOKEN}}
