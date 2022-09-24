@@ -1,4 +1,4 @@
-name: Start scheduled job
+name: Stop scheduled job
 
 on:
   # Triggers the workflow every monday at 14:30 UTC
@@ -9,7 +9,7 @@ on:
 jobs:
   cron:
     runs-on: ubuntu-latest
-    name: Start the server
+    name: Stop the server
     steps:
       - name: Download run pod cli
         run: wget https://raw.githubusercontent.com/novoda/dreams/main/manage-pods.sh && chmod +x ./manage-pods.sh
