@@ -1,7 +1,5 @@
 #!/bin/bash
 
-apt-get update && apt-get install jq
-
 if [ $1 = "--start" ]
 then
 	start=true
