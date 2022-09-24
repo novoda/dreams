@@ -1,17 +1,17 @@
-name: Stop scheduled job
+name: Start scheduled job
 
 on:
-  # Triggers the workflow every monday at 16:00 UTC
+  # Triggers the workflow every monday at 14:30 UTC
   workflow_dispatch:
 #  schedule:
-#    - cron: "11 * * * *"
+#    - cron: 10 * * * *
 
 jobs:
   cron:
     runs-on: ubuntu-latest
-    name: Stop the server
+    name: Start the server
     steps:
-      - name: Download runpod cli
-        run: wget https://github.com/Run-Pod/runpodctl/releases/download/v1.5.0/runpodctl-linux-amd && chmod +x runpodctl-linux-amd
+      - name: Download run pod cli
+        run: wget https://raw.githubusercontent.com/novoda/dreams/main/manage-pods.sh
       - name: Stop pod
-        run: ./runpodctl-linux-amd config --apiKey=${{secrets.RUN_POD_API_KEY}} && ./runpodctl-linux-amd stop pod 05jtpv6gi4xk3c
+        run: ./manage-pods.sh --stop ${{secrets.RUN_POD_API_KEY}} ${{secrets.HUGGING_FACE_TOKEN}}
