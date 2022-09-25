@@ -1,4 +1,4 @@
-name: Start scheduled job
+name: Start Dream API
 
 on:
   # Triggers the workflow every monday at 14:30 UTC
